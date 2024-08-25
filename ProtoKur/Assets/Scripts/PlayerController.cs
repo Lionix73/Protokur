@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Movement Variables")]
+    [Header("Basic Movement Variables")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpCoolDown;
@@ -15,9 +15,15 @@ public class PlayerController : MonoBehaviour
 
     private bool readyToJump = true;
 
+    [Header("Advanced Movement Variables")]
+    private bool onWallR;
+    private bool onWallL;
+
+
     [Header("Ground")]
     [SerializeField] private float playerHeight;
     [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private LayerMask whatIsWall;
     private bool grounded;
 
     [Header("Keybinds")]
@@ -31,6 +37,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection;
     private Rigidbody rb;
 
+    private Color wallR = Color.red;
+    private Color wallL = Color.red;
+
+    //Start of the Script
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -44,6 +54,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        WallRunCheck();
 
         if(grounded){
             rb.drag = groundDrag;
@@ -54,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
         Inputs();
         SpeedControl();
+        WallRun();
     }
 
     private void Inputs(){
@@ -61,7 +73,6 @@ public class PlayerController : MonoBehaviour
         verticalinput = Input.GetAxisRaw("Vertical");
 
         if(Input.GetKeyDown(jumpKey) && readyToJump && grounded){
-            Debug.Log("Salta");
             
             readyToJump = false;
 
@@ -100,5 +111,31 @@ public class PlayerController : MonoBehaviour
 
     private void ResetJump(){
         readyToJump = true;
+    }
+
+    private void WallRunCheck(){
+        onWallR = Physics.Raycast(orientation.transform.position, orientation.right, 1f, whatIsWall);
+        Debug.DrawRay(orientation.transform.position, orientation.right, wallR);
+        if(onWallR){
+            wallR = Color.green;
+        }
+        else{
+            wallR = Color.red;
+        }
+
+        onWallL = Physics.Raycast(orientation.transform.position, -orientation.right, 1f, whatIsWall);
+        Debug.DrawRay(orientation.transform.position, -orientation.right, wallL);
+        if(onWallL){
+            wallL = Color.green;
+        }
+        else{
+            wallL = Color.red;
+        }
+    }
+
+    private void WallRun(){
+        if(onWallL || onWallR){
+            Debug.Log("Chocando tilin");
+        }
     }
 }
