@@ -9974,6 +9974,8 @@ MonoBehaviour:
   airMultiplier: 0.6
   groundDrag: 5
   orientation: {fileID: 921592325}
+  wallRunForce: 5
+  wallDetectionAngle: {x: 3, y: 0, z: 0}
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2

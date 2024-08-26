@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private bool readyToJump = true;
 
     [Header("Advanced Movement Variables")]
+    [SerializeField] private int wallRunForce;
+    [SerializeField] private Vector3 wallDetectionAngle;
     private bool onWallR;
     private bool onWallL;
 
@@ -134,8 +136,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void WallRun(){
-        if(onWallL || onWallR){
-            Debug.Log("Chocando tilin");
+        if(onWallL){
+            rb.AddForce(-transform.right * wallRunForce, ForceMode.Impulse);
         }
     }
 }
