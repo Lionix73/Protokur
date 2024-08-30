@@ -13,13 +13,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundDrag;
     [SerializeField] private Transform orientation;
 
+    private Vector3 flatVel;
     private bool readyToJump = true;
 
     [Header("Advanced Movement Variables")]
     [SerializeField] private int wallRunForce;
-    [SerializeField] private Vector3 wallDetectionAngle;
+    [SerializeField] private float minVelToWallrun;
+    [SerializeField] private float wallDrag;
     private bool onWallR;
     private bool onWallL;
+    private bool activeWallRun;
 
 
     [Header("Ground")]
@@ -60,6 +63,7 @@ public class PlayerController : MonoBehaviour
 
         if(grounded){
             rb.drag = groundDrag;
+            activeWallRun = false;
         }
         else{
             rb.drag = 0;
@@ -67,7 +71,12 @@ public class PlayerController : MonoBehaviour
 
         Inputs();
         SpeedControl();
-        WallRun();
+
+        if(flatVel.magnitude >= minVelToWallrun && grounded == false && activeWallRun == false && (onWallL || onWallR)){
+            WallRun();
+        }
+
+        Debug.Log("Wallrunn active:" + activeWallRun);
     }
 
     private void Inputs(){
@@ -79,6 +88,15 @@ public class PlayerController : MonoBehaviour
             readyToJump = false;
 
             Jump();
+
+            Invoke(nameof(ResetJump), jumpCoolDown);
+        }
+
+        if(Input.GetKeyDown(jumpKey) && readyToJump && activeWallRun){
+            
+            readyToJump = false;
+
+            wallJump();
 
             Invoke(nameof(ResetJump), jumpCoolDown);
         }
@@ -97,7 +115,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void SpeedControl(){
-        Vector3 flatVel = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+        flatVel = new Vector3(rb.velocity.x, 0, rb.velocity.z);
 
         if(flatVel.magnitude > moveSpeed){
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
@@ -106,9 +124,30 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Jump(){
+
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+        
+    }
+
+    private void wallJump(){
+
+        if(onWallL){
+            rb.AddForce(orientation.right * jumpForce * 100f, ForceMode.Force); 
+
+            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);   
+        }
+        if(onWallR){
+            rb.AddForce(-orientation.right * jumpForce * 100f, ForceMode.Force);   
+
+            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);   
+        }
     }
 
     private void ResetJump(){
@@ -116,8 +155,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void WallRunCheck(){
-        onWallR = Physics.Raycast(orientation.transform.position, orientation.right, 1f, whatIsWall);
-        Debug.DrawRay(orientation.transform.position, orientation.right, wallR);
+        onWallR = Physics.Raycast(transform.position, orientation.right + orientation.forward, 1f, whatIsWall);
+        Debug.DrawRay(transform.position, orientation.right + orientation.forward, wallR);
         if(onWallR){
             wallR = Color.green;
         }
@@ -125,9 +164,10 @@ public class PlayerController : MonoBehaviour
             wallR = Color.red;
         }
 
-        onWallL = Physics.Raycast(orientation.transform.position, -orientation.right, 1f, whatIsWall);
-        Debug.DrawRay(orientation.transform.position, -orientation.right, wallL);
+        onWallL = Physics.Raycast(transform.position, -orientation.right + orientation.forward, 1f, whatIsWall);
+        Debug.DrawRay(transform.position, -orientation.right + orientation.forward, wallL);
         if(onWallL){
+
             wallL = Color.green;
         }
         else{
@@ -136,8 +176,23 @@ public class PlayerController : MonoBehaviour
     }
 
     private void WallRun(){
+        activeWallRun = true;
+
+
         if(onWallL){
-            rb.AddForce(-transform.right * wallRunForce, ForceMode.Impulse);
+            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+            rb.drag = wallDrag;
+            rb.AddForce(-orientation.right * wallRunForce * 20f, ForceMode.Acceleration);
+            rb.AddForce(transform.up * wallRunForce * 30f, ForceMode.Acceleration);
+            
+        }
+        if(onWallR){
+            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+            rb.drag = wallDrag;
+            rb.AddForce(orientation.right * wallRunForce * 20f, ForceMode.Acceleration);
+            rb.AddForce(transform.up * wallRunForce * 30f, ForceMode.Acceleration);
         }
     }
 }
