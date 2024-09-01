@@ -14520,15 +14520,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce17337b897271045b669583ce281ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpForce: 7
+  moveSpeed: 15
+  maxSpeed: 30
+  jumpForce: 12
   jumpCoolDown: 0.2
-  airMultiplier: 0.3
+  airMultiplier: 0.8
   groundDrag: 5
+  crouchHeight: 0.5
   orientation: {fileID: 921592325}
-  wallRunForce: 8
-  minVelToWallrun: 3
-  wallDrag: 5
+  wallRunForce: 10
+  minVelToWallrun: 12
+  wallDrag: 10
+  wallJumpCoolDown: 0.5
+  slideForce: 10
+  minVelToSlide: 13
+  crouchDecelerationRate: 0.03
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
@@ -14536,6 +14542,8 @@ MonoBehaviour:
   whatIsWall:
     serializedVersion: 2
     m_Bits: 2048
+  playerCapsule: {fileID: 1973765998}
+  cameraPos: {fileID: 1029896589}
 --- !u!43 &1481532923
 Mesh:
   m_ObjectHideFlags: 0
