@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEditor.SearchService;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpCoolDown;
     [SerializeField] private float airMultiplier;
     [SerializeField] private float groundDrag;
+    [SerializeField] private float airDrag;
     [Range(0.1f, 0.9f)] [SerializeField] private float crouchHeight;
     [SerializeField] private Transform orientation;
 
@@ -41,6 +43,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float minVelToSlide;
     [Range(0.01f, 0.5f)][SerializeField] private float crouchDecelerationRate;
     private bool sliding;
+
+    [Header("Vaulting Variables")]
+    private int vaultLayer;
 
 
     [Header("Ground Variables")]
@@ -83,6 +88,9 @@ public class PlayerController : MonoBehaviour
         crouchScale = new Vector3(playerCapsule.transform.localScale.x, crouchHeight, playerCapsule.transform.localScale.z);
         crouchDrag = groundDrag;
         cameraPosHeight = cameraPos.transform.localPosition.y;
+
+        vaultLayer = LayerMask.NameToLayer("vaultLayer");
+        vaultLayer = ~vaultLayer;
     }
 
     private void FixedUpdate(){
@@ -119,6 +127,9 @@ public class PlayerController : MonoBehaviour
         else if(grounded && crouching){
             rb.drag = crouchDrag;
         }
+        else if(!grounded){
+            rb.drag = airDrag;
+        }
         else if(!grounded && (onWallL || onWallR)){
             rb.drag = wallDrag;
         }
@@ -151,6 +162,10 @@ public class PlayerController : MonoBehaviour
             WallJump();
 
             Invoke(nameof(ResetWallJump), wallJumpCoolDown);
+        }
+
+        if(Input.GetKeyDown(jumpKey)){
+            Vault();
         }
 
         if(Input.GetKeyDown(crouch)){
@@ -312,5 +327,31 @@ public class PlayerController : MonoBehaviour
         else if(onWallFront){
 
         }
+    }
+
+    private void Vault(){
+        if (Physics.Raycast(cameraPos.position, orientation.transform.forward, out var firstHit, 1f, vaultLayer)){
+            print("Vaultable Detected");
+
+            Debug.DrawRay(cameraPos.position, orientation.transform.forward);
+
+            if(Physics.Raycast(firstHit.point + (orientation.transform.forward * 0.5f) + (Vector3.up * 0.6f * (playerHeight)), Vector3.down, out var secondHit, playerHeight)){
+                print("Place to Land");
+                StartCoroutine(LerpVault(secondHit.point + new Vector3(0f, playerHeight/2 + 0.1f, 0f), 0.5f));
+            }
+        }
+    }
+
+    IEnumerator LerpVault(Vector3 targetPosition, float duration){
+        float time = 0;
+        Vector3 startPosition = transform.position;
+
+        while(time < duration){
+            transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition;
     }
 }
