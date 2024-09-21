@@ -44,8 +44,13 @@ public class PlayerController : MonoBehaviour
     [Range(0.01f, 0.5f)][SerializeField] private float crouchDecelerationRate;
     private bool sliding;
 
+
     [Header("Vaulting Variables")]
     private int vaultLayer;
+
+
+    [Header("Grappling Variables")]
+    private GrapplingGun grappling;
 
 
     [Header("Ground Variables")]
@@ -78,19 +83,24 @@ public class PlayerController : MonoBehaviour
     private Color wallL = Color.red;
     private Color wallFront = Color.red;
 
+    void Awake(){
+        rb = GetComponent<Rigidbody>();
+
+        grappling = FindObjectOfType<GrapplingGun>();
+
+        vaultLayer = LayerMask.NameToLayer("vaultLayer");
+        vaultLayer = ~vaultLayer;
+    }
+
 
     //Start of the Script
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
         crouchScale = new Vector3(playerCapsule.transform.localScale.x, crouchHeight, playerCapsule.transform.localScale.z);
         crouchDrag = groundDrag;
-        cameraPosHeight = cameraPos.transform.localPosition.y;
-
-        vaultLayer = LayerMask.NameToLayer("vaultLayer");
-        vaultLayer = ~vaultLayer;
+        cameraPosHeight = cameraPos.transform.localPosition.y;    
     }
 
     private void FixedUpdate(){
@@ -130,11 +140,14 @@ public class PlayerController : MonoBehaviour
         else if(!grounded){
             rb.drag = airDrag;
         }
+        else if(!grounded && crouching){
+            rb.drag = airDrag;
+        }
         else if(!grounded && (onWallL || onWallR)){
             rb.drag = wallDrag;
         }
         else if (!grounded && !onWallL && !onWallR){
-            rb.drag = groundDrag;
+            rb.drag = airDrag;
             activeWallRun = false;
         }
         else{
@@ -168,12 +181,13 @@ public class PlayerController : MonoBehaviour
             Vault();
         }
 
-        if(Input.GetKeyDown(crouch)){
+        if(Input.GetKeyDown(crouch) && grounded){
             Crouch();
+            CrouchDeceleration();
         }
 
-        if (Input.GetKeyDown(crouch)){
-            CrouchDeceleration();
+        if(Input.GetKeyDown(crouch) && !grounded){
+            Crouch();
         }
 
         if(Input.GetKeyUp(crouch)){
@@ -187,9 +201,11 @@ public class PlayerController : MonoBehaviour
         if(grounded){
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
-
-        else if(!grounded){
+        else if(!grounded && !grappling.IsGrappling()){
             rb.AddForce(moveDirection.normalized * moveSpeed * airMultiplier * 10f, ForceMode.Force);
+        }
+        else if(!grounded && grappling.IsGrappling()){
+            rb.AddForce(moveDirection.normalized * moveSpeed * 2f, ForceMode.Force);
         }
     }
 
@@ -253,14 +269,14 @@ public class PlayerController : MonoBehaviour
     private void WallJump(){
 
         if(onWallL){
-            rb.AddForce(orientation.right * jumpForce * 300f, ForceMode.Force); 
+            rb.AddForce(orientation.right * jumpForce * 100f, ForceMode.Force); 
 
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
             rb.AddForce(transform.up * jumpForce * 2f, ForceMode.Impulse);   
         }
         if(onWallR){
-            rb.AddForce(-orientation.right * jumpForce * 300f, ForceMode.Force);   
+            rb.AddForce(-orientation.right * jumpForce * 100f, ForceMode.Force);   
 
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
