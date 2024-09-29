@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
     //Visual and Colliding Variables
     [SerializeField] private GameObject playerCapsule;
     [SerializeField] private Transform cameraPos;
+    private PlayerCam playerCamScript;
 
 
     //Movement variables
@@ -84,10 +85,15 @@ public class PlayerController : MonoBehaviour
     private Color wallL = Color.red;
     private Color wallFront = Color.red;
 
+    //Animations And VFX Variables
+
+
     void Awake(){
         rb = GetComponent<Rigidbody>();
 
         grappling = FindObjectOfType<GrapplingGun>();
+        
+        playerCamScript = FindObjectOfType<PlayerCam>();
 
         vaultLayer = LayerMask.NameToLayer("vaultLayer");
         vaultLayer = ~vaultLayer;
@@ -99,7 +105,8 @@ public class PlayerController : MonoBehaviour
     {
         rb.freezeRotation = true;
 
-        crouchScale = new Vector3(playerCapsule.transform.localScale.x, playerCapsule.transform.localScale.y * crouchHeight, playerCapsule.transform.localScale.z);
+        crouchScale = new Vector3(playerCapsule.transform.localScale.x, playerCapsule.transform.localScale.y * crouchHeight, 
+        playerCapsule.transform.localScale.z);
     }
 
     private void FixedUpdate(){
@@ -109,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Vel: " + flatVel.magnitude);
+        //Debug.Log("Vel: " + flatVel.magnitude);
 
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.1f, whatIsGround);
         
@@ -125,8 +132,18 @@ public class PlayerController : MonoBehaviour
             WallRun();
         }
 
+        ExitWall();
+
         //Mostly for Me (usless for the user)
         ActiveGrappleGun();
+    }
+
+    private void ExitWall(){
+        if(!onWallL && !onWallR)
+            activeWallRun = false;
+
+        if(!activeWallRun)
+            playerCamScript.ZRotation = 0f;
     }
 
     private void DragVerifications(){
@@ -332,6 +349,8 @@ public class PlayerController : MonoBehaviour
     private void WallRun(){
 
         if(onWallL){
+            playerCamScript.ZRotation = -5f;
+
             activeWallRun = true;
 
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -341,6 +360,8 @@ public class PlayerController : MonoBehaviour
             
         }
         else if(onWallR){
+            playerCamScript.ZRotation = 5f;
+
             activeWallRun = true;
 
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);

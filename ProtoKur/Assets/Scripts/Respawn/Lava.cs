@@ -9,10 +9,15 @@ public class Lava : MonoBehaviour
 
     void Start(){
         respawnManager = FindObjectOfType<RespawnManager>();
+
+        if (respawnManager != null){
+            Debug.Log("Found respawn mang");
+        }
     }
 
-    void OnTriggerEnter(Collider other){
-        if(other.CompareTag("Player")){
+    private void OnTriggerEnter(Collider other){
+        if(other.gameObject.CompareTag("PlayerCollider")){
+            Debug.Log("Respawn");
             respawnManager.Respawn();
         }
     }

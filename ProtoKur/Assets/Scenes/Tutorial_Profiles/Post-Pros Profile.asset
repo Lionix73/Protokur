@@ -34,15 +34,15 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   gradingMode:
-    overrideState: 0
+    overrideState: 1
     value: 1
   externalLut:
     overrideState: 0
     value: {fileID: 0}
     defaultState: 1
   tonemapper:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 2
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -1345,10 +1345,10 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   intensity:
-    overrideState: 0
+    overrideState: 1
     value: 0
   threshold:
-    overrideState: 0
+    overrideState: 1
     value: 1
   softKnee:
     overrideState: 0
@@ -1363,7 +1363,7 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   color:
-    overrideState: 0
+    overrideState: 1
     value: {r: 1, g: 1, b: 1, a: 1}
   fastMode:
     overrideState: 0
