@@ -305,7 +305,6 @@ GameObject:
   - component: {fileID: 8481766800891814476}
   - component: {fileID: 8532269612153199698}
   - component: {fileID: 9215846277858940718}
-  - component: {fileID: 2036738177070161051}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -368,7 +367,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 7735
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -392,9 +391,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d0ebd6ac2c23345be512a7628f82a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 300
-  sensY: 300
+  sensX: 250
+  sensY: 250
   orientation: {fileID: 0}
+  rotationSmoothness: 0.1
 --- !u!81 &8481766800891814476
 AudioListener:
   m_ObjectHideFlags: 0
@@ -463,27 +463,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
---- !u!95 &2036738177070161051
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4225911043438158709}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4568682504413634700
 GameObject:
   m_ObjectHideFlags: 0
