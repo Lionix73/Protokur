@@ -10,10 +10,11 @@ Material:
   m_Name: GridBox_URP Vaultable
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: 6963dbce21f3a4d4a9168459865f61e4, type: 2}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ModifiedSerializedProperties: 2
+  m_ValidKeywords:
+  - _EMISSION
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -27,8 +28,9 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.11132065, b: 0.115944244, a: 0.92156863}
-    - _Color: {r: 1, g: 0.11132062, b: 0.115944214, a: 0.92156863}
+    - _BaseColor: {r: 1, g: 0.046772934, b: 0, a: 0.92156863}
+    - _Color: {r: 1, g: 0.046772912, b: 0, a: 0.92156863}
+    - _EmissionColor: {r: 3.4566038, g: 0, b: 0.11481784, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6016086535107218901
 MonoBehaviour:

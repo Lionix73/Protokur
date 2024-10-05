@@ -12,8 +12,9 @@ public class CheckPoint : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other){
-        if(other.CompareTag("Player")){
+    private void OnTriggerEnter(Collider other){
+        if(other.CompareTag("PlayerCollider")){
+            Debug.Log("Player Entered Checkpoint");
             respawnManager.RespawnPoint = transform;
         }
     }

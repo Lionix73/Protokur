@@ -7,15 +7,17 @@ public class RespawnManager : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
 
     private GameObject playerGO;
+    private GameObject playerCam;
 
     void Start(){
-        if (playerGO == null){
-            playerGO = GameObject.FindGameObjectWithTag("Player");
-        }
+        playerGO = GameObject.FindGameObjectWithTag("Player");
+        playerCam = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     public void Respawn(){
         playerGO.transform.position = respawnPoint.transform.position;
+        playerCam.transform.rotation = respawnPoint.transform.rotation;
+
     }
 
     public Transform RespawnPoint{

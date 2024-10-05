@@ -1,8 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -53,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Vaulting Variables")]
     private int vaultLayer;
+    private bool vaulting = false;
 
 
     [Header("Grappling Variables")]
@@ -77,6 +75,8 @@ public class PlayerController : MonoBehaviour
     //Visual and Colliding Variables
     [SerializeField] private GameObject playerCapsule;
     [SerializeField] private Transform cameraPos;
+    [SerializeField] private GameObject tempCam;
+
     private Camera playerCamera;
     private PlayerCam playerCamScript;
 
@@ -105,8 +105,8 @@ public class PlayerController : MonoBehaviour
 
         grappling = FindObjectOfType<GrapplingGun>();
 
-        playerCamera = FindObjectOfType<Camera>();
-        
+        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();  
+
         playerCamScript = FindObjectOfType<PlayerCam>();
 
         vaultLayer = LayerMask.NameToLayer("vaultLayer");
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Vel: " + flatVel.magnitude);
+        //Debug.Log("Vel: " + flatVel.magnitude);
 
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.1f, whatIsGround);
 
@@ -148,7 +148,9 @@ public class PlayerController : MonoBehaviour
             WallRun();
         }
 
-        ExitWall();
+        ExitingCameraRotation();
+
+        TempCamRotation();
 
         //Mostly for Me (usless for the user)
         ActiveGrappleGun();
@@ -163,12 +165,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void ExitWall(){
+    private void TempCamRotation(){
+        tempCam.transform.rotation = playerCamera.transform.rotation;
+    }
+
+    private void ExitingCameraRotation(){
         if(!onWallL && !onWallR)
             activeWallRun = false;
 
-        if(!activeWallRun)
+        if(vaulting){
+            playerCamScript.ZRotation = 10f;
+        }
+        else if(!activeWallRun && !vaulting){
             playerCamScript.ZRotation = 0f;
+        } 
     }
 
     private void DragVerifications(){
@@ -277,7 +287,6 @@ public class PlayerController : MonoBehaviour
         }
 
         if(flatVel.magnitude > speedThreshold){
-            Debug.Log("Speeding Up");
             speedVFX.Play();
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, fastFOV, Time.deltaTime * 2);
 
@@ -442,14 +451,18 @@ public class PlayerController : MonoBehaviour
 
     private void Vault(){
         if (Physics.Raycast(cameraPos.position, orientation.transform.forward, out var firstHit, 1f, vaultLayer)){
-
             Debug.DrawRay(cameraPos.position, orientation.transform.forward);
 
-            if(Physics.Raycast(firstHit.point + (orientation.transform.forward * 0.5f) + (Vector3.up * 0.6f * (playerHeight)), Vector3.down, out var secondHit, playerHeight)){
-                print("Place to Land");
-                StartCoroutine(LerpVault(secondHit.point + new Vector3(0f, playerHeight/2 + 0.1f, 0f), 0.5f));
+            Vector3 firstHitOffset = firstHit.point + orientation.transform.forward * 0.5f + Vector3.up * 0.6f * playerHeight;
+            if (Physics.Raycast(firstHitOffset, Vector3.down, out var secondHit, playerHeight)){
+                vaulting = true;
+                playerCamera.enabled = false;
+                tempCam.SetActive(true);
+
+                StartCoroutine(LerpVault(secondHit.point + new Vector3(0f, playerHeight / 2 + 0.1f, 0f), 0.5f));
             }
         }
+
     }
 
     IEnumerator LerpVault(Vector3 targetPosition, float duration){
@@ -462,7 +475,10 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
+        playerCamera.enabled = true;
+        tempCam.SetActive(false);
         transform.position = targetPosition;
+        vaulting = false;
     }
 
     private void ActiveGrappleGun(){
