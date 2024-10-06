@@ -289,7 +289,6 @@ public class PlayerController : MonoBehaviour
         if(flatVel.magnitude > speedThreshold){
             speedVFX.Play();
             playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, fastFOV, Time.deltaTime * 2);
-
         }
         else if(flatVel.magnitude < speedThreshold){
             speedVFX.Stop();
@@ -369,18 +368,18 @@ public class PlayerController : MonoBehaviour
     private void WallJump(){
 
         if(onWallL){
-            rb.AddForce(orientation.right * jumpForce * 50f, ForceMode.Force); 
+            rb.AddForce(orientation.right * jumpForce * 50f * Time.deltaTime, ForceMode.Force);
 
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-            rb.AddForce(transform.up * jumpForce * 1f, ForceMode.Impulse);   
+            rb.AddForce(transform.up * jumpForce * 1f, ForceMode.Impulse); 
         }
         if(onWallR){
-            rb.AddForce(-orientation.right * jumpForce * 50f, ForceMode.Force);   
+            rb.AddForce(-orientation.right * jumpForce * 50f * Time.deltaTime, ForceMode.Force);
 
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-            rb.AddForce(transform.up * jumpForce * 1f, ForceMode.Impulse);   
+            rb.AddForce(transform.up * jumpForce * 1f, ForceMode.Impulse);
         }
     }
 
@@ -430,8 +429,8 @@ public class PlayerController : MonoBehaviour
 
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-            rb.AddForce(-orientation.right * wallRunForce * 20f, ForceMode.Force);
-            rb.AddForce(transform.up * wallRunForce * 20f, ForceMode.Acceleration);
+            rb.AddForce(-orientation.right * wallRunForce * 20f * Time.deltaTime, ForceMode.Force);
+            rb.AddForce(transform.up * wallRunForce * 20f * Time.deltaTime, ForceMode.Acceleration);
             
         }
         else if(onWallR){
@@ -441,8 +440,8 @@ public class PlayerController : MonoBehaviour
 
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-            rb.AddForce(orientation.right * wallRunForce * 20f, ForceMode.Force);
-            rb.AddForce(transform.up * wallRunForce * 20f, ForceMode.Acceleration);
+            rb.AddForce(orientation.right * wallRunForce * 20f * Time.deltaTime, ForceMode.Force);
+            rb.AddForce(transform.up * wallRunForce * 20f * Time.deltaTime, ForceMode.Acceleration);
         }
         else if(onWallFront){
 
