@@ -7,6 +7,7 @@ TagManager:
   - PlayerCollider
   - CameraHolder
   - DontCollide
+  - Ledge
   layers:
   - Default
   - TransparentFX

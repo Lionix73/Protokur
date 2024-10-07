@@ -51,6 +51,10 @@ public class PlayerController : MonoBehaviour
     [Header("Vaulting Variables")]
     private int vaultLayer;
     private bool vaulting = false;
+    private float vaultDistance = 1f; // Distance to detect ledge
+    private float vaultHeight = 1.0f; // Height to move player
+    private float cooldownTime = 1.0f; // Cooldown time between vaults
+    private bool canVault = true;
 
 
     [Header("Grappling Variables")]
@@ -144,13 +148,14 @@ public class PlayerController : MonoBehaviour
 
         SpeedControl();
 
+
         if(flatVel.magnitude >= minVelToWallrun && !grounded && !activeWallRun && (onWallL || onWallR)){
             WallRun();
         }
 
-        ExitingCameraRotation();
+        Vault();
 
-        TempCamRotation();
+        ExitingCameraRotation();
 
         //Mostly for Me (usless for the user)
         ActiveGrappleGun();
@@ -163,10 +168,6 @@ public class PlayerController : MonoBehaviour
         else{
             coyoteTimeCounter -= Time.deltaTime;
         }
-    }
-
-    private void TempCamRotation(){
-        tempCam.transform.rotation = playerCamera.transform.rotation;
     }
 
     private void ExitingCameraRotation(){
@@ -239,9 +240,6 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(jumpKey)){
             //For Jump Buffering
             JumpBufferCounter = JumpBufferTime;
-
-            //For Vaulting
-            Vault();
         }
         else{
             JumpBufferCounter -= Time.deltaTime;
@@ -393,7 +391,7 @@ public class PlayerController : MonoBehaviour
 
     private void WallRunCheck(){
         onWallR = Physics.Raycast(transform.position, orientation.right, 1f, whatIsWall);
-        Debug.DrawRay(transform.position, orientation.right, wallR);
+        //Debug.DrawRay(transform.position, orientation.right, wallR);
         if(onWallR){
             wallR = Color.green;
         }
@@ -402,7 +400,7 @@ public class PlayerController : MonoBehaviour
         }
 
         onWallL = Physics.Raycast(transform.position, -orientation.right, 1f, whatIsWall);
-        Debug.DrawRay(transform.position, -orientation.right, wallL);
+        //Debug.DrawRay(transform.position, -orientation.right, wallL);
         if(onWallL){
             wallL = Color.green;
         }
@@ -411,7 +409,7 @@ public class PlayerController : MonoBehaviour
         }
 
         onWallFront = Physics.Raycast(transform.position, orientation.forward, 1f, whatIsWall);
-        Debug.DrawRay(transform.position, orientation.forward, wallFront);
+        //Debug.DrawRay(transform.position, orientation.forward, wallFront);
         if(onWallFront){
             wallFront = Color.green;
         }
@@ -449,35 +447,49 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Vault(){
-        if (Physics.Raycast(cameraPos.position, orientation.transform.forward, out var firstHit, 1f, vaultLayer)){
-            Debug.DrawRay(cameraPos.position, orientation.transform.forward);
+        RaycastHit hit;
+        Vector3 rayOrigin = Camera.main.transform.position + new Vector3(0, -0.2f, 0);
+        Vector3 rayDirection = Camera.main.transform.forward;
 
-            Vector3 firstHitOffset = firstHit.point + orientation.transform.forward * 0.5f + Vector3.up * 0.6f * playerHeight;
-            if (Physics.Raycast(firstHitOffset, Vector3.down, out var secondHit, playerHeight)){
-                vaulting = true;
-                playerCamera.enabled = false;
-                tempCam.SetActive(true);
-
-                StartCoroutine(LerpVault(secondHit.point + new Vector3(0f, playerHeight / 2 + 0.1f, 0f), 0.5f));
+        Debug.DrawRay(rayOrigin, rayDirection * vaultDistance, Color.red);
+        if (Physics.Raycast(rayOrigin, rayDirection, out hit, vaultDistance))
+        {
+            if (hit.collider.CompareTag("Ledge"))
+            {
+                StartCoroutine(VaultCoro(hit.point));
             }
         }
-
     }
 
-    IEnumerator LerpVault(Vector3 targetPosition, float duration){
-        float time = 0;
-        Vector3 startPosition = transform.position;
+    IEnumerator VaultCoro(Vector3 hitPoint)
+    {
+        canVault = false;
+        vaulting = true;
 
-        while(time < duration){
-            transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
-            time += Time.deltaTime;
+        // Calculate the target position
+        Vector3 startPosition = transform.position;
+        Vector3 vaultPosition = new Vector3(hitPoint.x, hitPoint.y + vaultHeight, hitPoint.z);
+
+        // Duration of the vaulting animation
+        float duration = 0.1f; // Adjust as needed
+        float elapsedTime = 0f;
+
+        // Smoothly move the player to the top of the ledge
+        while (elapsedTime < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, vaultPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        playerCamera.enabled = true;
-        tempCam.SetActive(false);
-        transform.position = targetPosition;
+        // Ensure the player reaches the exact final position
+        transform.position = vaultPosition;
+
         vaulting = false;
+
+        // Wait for cooldown
+        yield return new WaitForSeconds(cooldownTime);
+        canVault = true;
     }
 
     private void ActiveGrappleGun(){

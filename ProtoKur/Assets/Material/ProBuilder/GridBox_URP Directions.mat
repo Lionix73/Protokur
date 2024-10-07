@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GridBox_URP Vaultable
+  m_Name: GridBox_URP Directions
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: 6963dbce21f3a4d4a9168459865f61e4, type: 2}
   m_ModifiedSerializedProperties: 2

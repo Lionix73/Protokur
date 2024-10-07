@@ -242,7 +242,7 @@ MonoBehaviour:
   jumpForce: 15
   jumpCoolDown: 0.2
   airMultiplier: 0.8
-  groundDrag: 5
+  groundDrag: 7
   airDrag: 0.5
   crouchDrag: 11
   crouchHeight: 0.65
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 3241881930717924444}
   - component: {fileID: 652451575313834959}
   m_Layer: 0
-  m_Name: Speed
+  m_Name: VFX_Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
