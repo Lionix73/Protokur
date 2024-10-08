@@ -79,7 +79,6 @@ public class PlayerController : MonoBehaviour
     //Visual and Colliding Variables
     [SerializeField] private GameObject playerCapsule;
     [SerializeField] private Transform cameraPos;
-    [SerializeField] private GameObject tempCam;
 
     private Camera playerCamera;
     private PlayerCam playerCamScript;
@@ -96,12 +95,14 @@ public class PlayerController : MonoBehaviour
     private Color wallL = Color.red;
     private Color wallFront = Color.red;
 
+
     //Animations And VFX Variables
     [Header("Animations and VFX")]
     [SerializeField] private ParticleSystem speedVFX;
     [SerializeField] private float normalFOV = 60f;
     [SerializeField] private float fastFOV = 75f;
     [SerializeField] private float speedThreshold = 18f;
+    private float fovVelocity = 0.0f;
 
 
     void Awake(){
@@ -114,7 +115,6 @@ public class PlayerController : MonoBehaviour
         playerCamScript = FindObjectOfType<PlayerCam>();
 
         vaultLayer = LayerMask.NameToLayer("vaultLayer");
-        vaultLayer = ~vaultLayer;
     }
 
 
@@ -134,20 +134,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log("Vel: " + flatVel.magnitude);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.1f, whatIsGround);
-
-        CoyoteTimeManager();
+        Inputs();
         
         WallRunCheck();
 
         DragVerifications();
 
-        Inputs();
-
         SpeedControl();
-
 
         if(flatVel.magnitude >= minVelToWallrun && !grounded && !activeWallRun && (onWallL || onWallR)){
             WallRun();
@@ -159,15 +154,8 @@ public class PlayerController : MonoBehaviour
 
         //Mostly for Me (usless for the user)
         ActiveGrappleGun();
-    }
 
-    private void CoyoteTimeManager(){
-        if(grounded){
-            coyoteTimeCounter = coyoteTime;
-        }
-        else{
-            coyoteTimeCounter -= Time.deltaTime;
-        }
+        Debug.Log("Vel: " + flatVel.magnitude);
     }
 
     private void ExitingCameraRotation(){
@@ -209,55 +197,48 @@ public class PlayerController : MonoBehaviour
         horizontalinput = Input.GetAxisRaw("Horizontal");
         verticalinput = Input.GetAxisRaw("Vertical");
 
-        if(JumpBufferCounter > 0f && readyToJump && coyoteTimeCounter > 0 && !sliding){
-            
-            readyToJump = false;
-
-            Jump();
-
-            JumpBufferCounter = 0f;
-
-            Invoke(nameof(ResetJump), jumpCoolDown);
+        if (grounded) {
+            coyoteTimeCounter = coyoteTime;
+        } else {
+            coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if(Input.GetKeyDown(jumpKey) && readyToJump && activeWallRun){
-            
-            readyToJump = false;
-
-            WallJump();
-
-            Invoke(nameof(ResetWallJump), wallJumpCoolDown);
-        }
-
-        if(Input.GetKeyDown(jumpKey) && readyToJump && coyoteTimeCounter > 0 && sliding){
-            readyToJump = false;
-
-            SlideJump();
-
-            Invoke(nameof(ResetJump), jumpCoolDown);
-        }
-
-        if(Input.GetKeyDown(jumpKey)){
-            //For Jump Buffering
+        if (Input.GetKeyDown(jumpKey)) {
             JumpBufferCounter = JumpBufferTime;
-        }
-        else{
+        } else {
             JumpBufferCounter -= Time.deltaTime;
         }
 
-        if(Input.GetKeyUp(jumpKey)){
+        if (JumpBufferCounter > 0f && readyToJump && coyoteTimeCounter > 0 && !sliding && !activeWallRun) {
+            readyToJump = false;
+            Jump();
+            JumpBufferCounter = 0f;
+            Invoke(nameof(ResetJump), jumpCoolDown);
+        }
+
+        if (Input.GetKeyDown(jumpKey) && readyToJump && activeWallRun) {
+            readyToJump = false;
+            WallJump();
+            Invoke(nameof(ResetWallJump), wallJumpCoolDown);
+        }
+
+        if (JumpBufferCounter > 0f && readyToJump && coyoteTimeCounter > 0 && sliding) {
+            readyToJump = false;
+            SlideJump();
+            Debug.Log("Slide Jump");
+            JumpBufferCounter = 0f;
+            Invoke(nameof(ResetJump), jumpCoolDown);
+        }
+
+        if (Input.GetKeyUp(jumpKey)) {
             coyoteTimeCounter = 0;
         }
 
-        if(Input.GetKeyDown(crouch) && grounded && !activeWallRun){
+        if (Input.GetKeyDown(crouch) && !activeWallRun) {
             Crouch();
         }
 
-        if(Input.GetKeyDown(crouch) && !grounded && !activeWallRun){
-            Crouch();
-        }
-
-        if(Input.GetKeyUp(crouch)){
+        if (Input.GetKeyUp(crouch)) {
             Uncrouch();
         }
     }
@@ -276,23 +257,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void SpeedControl(){
-        flatVel = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+private void SpeedControl(){
+    flatVel = new Vector3(rb.velocity.x, 0, rb.velocity.z);
 
-        if(flatVel.magnitude > maxSpeed){
-            Vector3 limitedVel = flatVel.normalized * moveSpeed;
-            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
-        }
-
-        if(flatVel.magnitude > speedThreshold){
-            speedVFX.Play();
-            playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, fastFOV, Time.deltaTime * 2);
-        }
-        else if(flatVel.magnitude < speedThreshold){
-            speedVFX.Stop();
-            playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, normalFOV, Time.deltaTime * 2);
-        }
+    if(flatVel.magnitude > maxSpeed){
+        Vector3 limitedVel = flatVel.normalized * moveSpeed;
+        rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
     }
+
+    if(flatVel.magnitude > speedThreshold){
+        speedVFX.Play();
+        playerCamera.fieldOfView = Mathf.SmoothDamp(playerCamera.fieldOfView, fastFOV, ref fovVelocity, 0.2f);
+    }
+    else if(flatVel.magnitude < speedThreshold){
+        speedVFX.Stop();
+        playerCamera.fieldOfView = Mathf.SmoothDamp(playerCamera.fieldOfView, normalFOV, ref fovVelocity, 0.2f);
+    }
+}
 
     private void Jump(){
 
@@ -302,6 +283,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void SlideJump(){
+        Debug.Log("SlideJump called");
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 

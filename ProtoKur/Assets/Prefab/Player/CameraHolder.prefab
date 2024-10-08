@@ -284,13 +284,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01111419f5e1bc941a14864dfceddaa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 4911815727144252768, guid: ddbe6d2ffe4dcc742a45a2d61c73e4de, type: 3}
   whatIsGrappleable:
     serializedVersion: 2
     m_Bits: 4096
   gunCannon: {fileID: 3750311509491412380}
   camera: {fileID: 1312156850171512141}
-  maxDistance: 80
+  maxDistance: 14
+  crosshairUI: {fileID: 0}
 --- !u!1 &4225911043438158709
 GameObject:
   m_ObjectHideFlags: 0

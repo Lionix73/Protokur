@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrapplingGun : MonoBehaviour
 {
@@ -12,6 +12,9 @@ public class GrapplingGun : MonoBehaviour
     [SerializeField] private Transform gunCannon;
     [SerializeField] private Transform camera;
     [SerializeField] private float maxDistance;
+
+    [Header("Feedback Variables")]
+    [SerializeField] private Image crosshairUI;
     
     private LineRenderer lr;
     private Vector3 grapplePoint;
@@ -19,6 +22,8 @@ public class GrapplingGun : MonoBehaviour
 
     void Awake(){
         lr = GetComponent<LineRenderer>();
+
+        player = GameObject.Find("Player");
     }
 
     void Update(){
@@ -28,10 +33,26 @@ public class GrapplingGun : MonoBehaviour
         else if(Input.GetMouseButtonUp(0)){
             StopGrapple();
         }
+
+        //Debug.DrawLine(camera.position, camera.position + camera.transform.forward * maxDistance, Color.red);
+
+        UpdateCrosshair();
     }
 
     void LateUpdate(){
         DrawRope();
+    }
+
+    private void UpdateCrosshair(){
+        RaycastHit hit;
+        if (Physics.Raycast(camera.position, camera.transform.forward, out hit, maxDistance, whatIsGrappleable))
+        {
+            crosshairUI.color = Color.blue;
+        }
+        else
+        {
+            crosshairUI.color = Color.white;
+        }
     }
 
     private void StartGrapple(){

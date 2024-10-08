@@ -237,8 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce17337b897271045b669583ce281ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
-  maxSpeed: 30
+  moveSpeed: 17
+  maxSpeed: 33
   jumpForce: 15
   jumpCoolDown: 0.2
   airMultiplier: 0.8
@@ -253,7 +253,7 @@ MonoBehaviour:
   wallJumpCoolDown: 0.5
   slideForce: 8
   slideDrag: 2
-  minVelToSlide: 15
+  minVelToSlide: 16
   grapplingGun: {fileID: 0}
   activeGrapple: 1
   playerHeight: 2
@@ -265,11 +265,10 @@ MonoBehaviour:
     m_Bits: 2048
   playerCapsule: {fileID: 5602484736881529969}
   cameraPos: {fileID: 2761328114964895061}
-  tempCam: {fileID: 382317934205089669}
   speedVFX: {fileID: 0}
   normalFOV: 60
   fastFOV: 75
-  speedThreshold: 20
+  speedThreshold: 19
 --- !u!1 &5290643686700775155
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,16 +7,27 @@ public class MenuUI : MonoBehaviour
 {
     [SerializeField] private GameObject creditsPanel;
     [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject playPanel;
+
 
     void Start(){
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
         creditsPanel.SetActive(false);
+        playPanel.SetActive(false);
+
+        creditsPanel.SetActive(false);
     }
 
     public void Play(){
-        SceneManager.LoadScene("Tutorial");
+        playPanel.SetActive(true);
+        mainMenuPanel.SetActive(false);
+    }
+
+    public void GoBackPlay(){
+        playPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
     }
 
     public void Credits(){
@@ -31,5 +42,13 @@ public class MenuUI : MonoBehaviour
 
     public void Exit(){
         Application.Quit();
+    }
+
+    public void Tutorial(){
+        SceneManager.LoadScene("Tutorial");
+    }
+
+    public void Gym(){
+        SceneManager.LoadScene("TestingGym");
     }
 }
