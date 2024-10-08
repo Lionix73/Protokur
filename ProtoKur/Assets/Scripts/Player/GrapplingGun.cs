@@ -15,6 +15,8 @@ public class GrapplingGun : MonoBehaviour
 
     [Header("Feedback Variables")]
     [SerializeField] private Image crosshairUI;
+    [SerializeField] private Sprite normalCrosshair;
+    [SerializeField] private Sprite lockedCrosshair;
     
     private LineRenderer lr;
     private Vector3 grapplePoint;
@@ -47,11 +49,17 @@ public class GrapplingGun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(camera.position, camera.transform.forward, out hit, maxDistance, whatIsGrappleable))
         {
-            crosshairUI.color = Color.blue;
+            crosshairUI.transform.localScale = new Vector3(4f, 4f, 4f);
+            crosshairUI.color = Color.red;
+            crosshairUI.sprite = lockedCrosshair;
+            crosshairUI.transform.position = Camera.main.WorldToScreenPoint(hit.collider.bounds.center); // Move crosshair to the center of the object
         }
         else
         {
+            crosshairUI.transform.localScale = new Vector3(1f, 1f, 1f);
             crosshairUI.color = Color.white;
+            crosshairUI.sprite = normalCrosshair;
+            crosshairUI.transform.localPosition = Vector3.zero;
         }
     }
 
