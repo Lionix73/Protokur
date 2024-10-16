@@ -15,7 +15,7 @@ C:/Users/Acer/Desktop/Parkour Proto/Protokur/ProtoKur
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56161
+50229
 Successfully changed project path to: C:/Users/Acer/Desktop/Parkour Proto/Protokur/ProtoKur
 C:/Users/Acer/Desktop/Parkour Proto/Protokur/ProtoKur
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,14 +49,14 @@ C:/Users/Acer/Desktop/Parkour Proto/Protokur/ProtoKur
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [39096]  Target information:
+Player connection [24068]  Target information:
 
-Player connection [39096]  * "[IP] 192.168.1.6 [Port] 0 [Flags] 2 [Guid] 3238284212 [EditorId] 3238284212 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-PM0FQCBJ) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [24068]  * "[IP] 192.168.1.8 [Port] 0 [Flags] 2 [Guid] 1547313319 [EditorId] 1547313319 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-PM0FQCBJ) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [39096] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [39096] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [24068] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [24068] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-Refreshing native plugins compatible for Editor in 25.54 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 25.24 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.41f1 (0f988161febf)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.41f1/Editor/Data/Resources/UnitySubsystems
@@ -66,53 +66,53 @@ Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
     Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f9d)
     Vendor:   NVIDIA
-    VRAM:     3950 MB
-    Driver:   31.0.15.4633
+    VRAM:     3937 MB
+    Driver:   32.0.15.6590
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.41f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.41f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.41f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56344
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56592
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.41f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.41f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.010397 seconds.
-- Loaded All Assemblies, in  0.811 seconds
+Registered in 0.011499 seconds.
+- Loaded All Assemblies, in  0.518 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 260 ms
+Android Extension - Scanning For ADB Devices 648 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.595 seconds
-Domain Reload Profiling: 1404ms
-	BeginReloadAssembly (493ms)
+- Finished resetting the current domain, in  1.050 seconds
+Domain Reload Profiling: 1566ms
+	BeginReloadAssembly (179ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (2ms)
-	RebuildCommonClasses (46ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (72ms)
-	LoadAllAssembliesAndSetupDomain (184ms)
-		LoadAssemblies (490ms)
+	RebuildCommonClasses (44ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (82ms)
+	LoadAllAssembliesAndSetupDomain (201ms)
+		LoadAssemblies (176ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (181ms)
-			TypeCache.Refresh (179ms)
-				TypeCache.ScanAssembly (163ms)
+		AnalyzeDomain (196ms)
+			TypeCache.Refresh (193ms)
+				TypeCache.ScanAssembly (175ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (596ms)
+	FinalizeReload (1051ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (547ms)
+		SetupLoadedEditorAssemblies (996ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (379ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (802ms)
+			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (119ms)
-			ProcessInitializeOnLoadMethodAttributes (44ms)
+			BeforeProcessingInitializeOnLoad (6ms)
+			ProcessInitializeOnLoadAttributes (131ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -121,7 +121,7 @@ Domain Reload Profiling: 1404ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.695 seconds
+- Loaded All Assemblies, in  1.314 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Package Manager log level set to [2]
@@ -129,959 +129,48 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.777 seconds
-Domain Reload Profiling: 2465ms
-	BeginReloadAssembly (178ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (32ms)
-	RebuildCommonClasses (44ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (55ms)
-	LoadAllAssembliesAndSetupDomain (1400ms)
-		LoadAssemblies (1201ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (299ms)
-			TypeCache.Refresh (233ms)
-				TypeCache.ScanAssembly (190ms)
-			ScanForSourceGeneratedMonoScriptInfo (49ms)
-			ResolveRequiredComponents (16ms)
-	FinalizeReload (778ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (559ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (29ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (76ms)
-			ProcessInitializeOnLoadAttributes (374ms)
-			ProcessInitializeOnLoadMethodAttributes (70ms)
-			AfterProcessingInitializeOnLoad (6ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 5.02 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5650 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 50 unused Assets / (2.2 MB). Loaded Objects now: 6131.
-Memory consumption went from 257.9 MB to 255.7 MB.
-Total: 9.491400 ms (FindLiveObjects: 0.829000 ms CreateObjectMapping: 0.573700 ms MarkObjects: 6.872800 ms  DeleteObjects: 1.209800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 1904907.244963 seconds.
-  path: Assets/Material/Sky.mat
-  artifactKey: Guid(2c2699e2e635b0f4bb1c7d24f28ac49c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Material/Sky.mat using Guid(2c2699e2e635b0f4bb1c7d24f28ac49c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '257fa96bc562a81717ece462616d5ea1') in 0.345510 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 21
-========================================================================
-Received Import Request.
-  Time since last request: 3.300320 seconds.
-  path: Assets/Material/Sky.mat
-  artifactKey: Guid(2c2699e2e635b0f4bb1c7d24f28ac49c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Material/Sky.mat using Guid(2c2699e2e635b0f4bb1c7d24f28ac49c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '201bd3f68797d63916d9fff9a3b7f6e2') in 0.009956 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.831 seconds
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.200 seconds
-Domain Reload Profiling: 3027ms
-	BeginReloadAssembly (396ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (13ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (1ms)
-		CreateAndSetChildDomain (200ms)
-	RebuildCommonClasses (33ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (40ms)
-	LoadAllAssembliesAndSetupDomain (348ms)
-		LoadAssemblies (464ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (24ms)
-			TypeCache.Refresh (9ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (13ms)
-	FinalizeReload (2201ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (667ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (33ms)
-			SetLoadedEditorAssemblies (7ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (112ms)
-			ProcessInitializeOnLoadAttributes (432ms)
-			ProcessInitializeOnLoadMethodAttributes (76ms)
-			AfterProcessingInitializeOnLoad (7ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (23ms)
-Refreshing native plugins compatible for Editor in 6.18 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5433 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 33 unused Assets / (2.2 MB). Loaded Objects now: 6226.
-Memory consumption went from 217.6 MB to 215.4 MB.
-Total: 13.684900 ms (FindLiveObjects: 0.484000 ms CreateObjectMapping: 0.249300 ms MarkObjects: 12.535200 ms  DeleteObjects: 0.412800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  2.385 seconds
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.381 seconds
-Domain Reload Profiling: 4780ms
-	BeginReloadAssembly (472ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (19ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (1ms)
-		CreateAndSetChildDomain (176ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (41ms)
-	LoadAllAssembliesAndSetupDomain (1838ms)
-		LoadAssemblies (1896ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (66ms)
-			TypeCache.Refresh (35ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
-			ResolveRequiredComponents (29ms)
-	FinalizeReload (2381ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (645ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (40ms)
-			SetLoadedEditorAssemblies (6ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (96ms)
-			ProcessInitializeOnLoadAttributes (414ms)
-			ProcessInitializeOnLoadMethodAttributes (81ms)
-			AfterProcessingInitializeOnLoad (7ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (21ms)
-Refreshing native plugins compatible for Editor in 4.61 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5433 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 33 unused Assets / (2.2 MB). Loaded Objects now: 6242.
-Memory consumption went from 217.5 MB to 215.4 MB.
-Total: 8.012800 ms (FindLiveObjects: 0.877000 ms CreateObjectMapping: 0.505000 ms MarkObjects: 5.633400 ms  DeleteObjects: 0.989100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 614.040752 seconds.
-  path: Assets/Prefab/Lava.prefab
-  artifactKey: Guid(2bf3ea5082240334c9c444f8b6f4201c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/Lava.prefab using Guid(2bf3ea5082240334c9c444f8b6f4201c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '8f17c1044d6d471407d80458edf65399') in 0.023550 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 4.731661 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001697 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 2.623328 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab
-  artifactKey: Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab using Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'fb5f62a43a61356f7328d47eff46ef90') in 0.001206 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.021821 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.000797 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.530202 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.000876 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 191.912288 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001480 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 14.259385 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001503 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 109.119011 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.002262 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 389.293902 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.002675 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 11.043322 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001386 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 35.876734 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001894 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 3.345007 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001517 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 17.980797 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001328 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 12.236121 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001606 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  2.210 seconds
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.916 seconds
-Domain Reload Profiling: 5134ms
-	BeginReloadAssembly (622ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (31ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (1ms)
-		CreateAndSetChildDomain (245ms)
-	RebuildCommonClasses (45ms)
-	RebuildNativeTypeToScriptingClass (17ms)
-	initialDomainReloadingComplete (70ms)
-	LoadAllAssembliesAndSetupDomain (1463ms)
-		LoadAssemblies (1587ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (38ms)
-			TypeCache.Refresh (16ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (21ms)
-	FinalizeReload (2917ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (662ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (40ms)
-			SetLoadedEditorAssemblies (8ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (101ms)
-			ProcessInitializeOnLoadAttributes (427ms)
-			ProcessInitializeOnLoadMethodAttributes (77ms)
-			AfterProcessingInitializeOnLoad (8ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (22ms)
-Refreshing native plugins compatible for Editor in 8.86 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5433 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 33 unused Assets / (2.2 MB). Loaded Objects now: 6258.
-Memory consumption went from 217.5 MB to 215.4 MB.
-Total: 8.076500 ms (FindLiveObjects: 0.810200 ms CreateObjectMapping: 0.360300 ms MarkObjects: 6.049500 ms  DeleteObjects: 0.853600 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 13.880265 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab
-  artifactKey: Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab using Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'fb5f62a43a61356f7328d47eff46ef90') in 0.348883 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 83.364486 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.003468 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 95.823676 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.002031 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 30.340509 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.002253 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 2.351156 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001078 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 72.233092 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.002753 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 10.319133 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.002288 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.826 seconds
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.245 seconds
-Domain Reload Profiling: 5103ms
-	BeginReloadAssembly (613ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (19ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (2ms)
-		CreateAndSetChildDomain (266ms)
-	RebuildCommonClasses (43ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (47ms)
-	LoadAllAssembliesAndSetupDomain (1144ms)
-		LoadAssemblies (1243ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (58ms)
-			TypeCache.Refresh (30ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
-			ResolveRequiredComponents (25ms)
-	FinalizeReload (3245ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (844ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (54ms)
-			SetLoadedEditorAssemblies (14ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (123ms)
-			ProcessInitializeOnLoadAttributes (568ms)
-			ProcessInitializeOnLoadMethodAttributes (78ms)
-			AfterProcessingInitializeOnLoad (7ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (22ms)
-Refreshing native plugins compatible for Editor in 6.71 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5433 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 33 unused Assets / (2.2 MB). Loaded Objects now: 6274.
-Memory consumption went from 217.6 MB to 215.4 MB.
-Total: 7.554200 ms (FindLiveObjects: 0.720900 ms CreateObjectMapping: 0.707000 ms MarkObjects: 5.219600 ms  DeleteObjects: 0.903500 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 26.214672 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab
-  artifactKey: Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab using Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'fb5f62a43a61356f7328d47eff46ef90') in 0.392676 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 29.314455 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001532 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 18.144151 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.001133 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.072553 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.000745 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.768389 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.000888 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab
-  artifactKey: Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab using Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'fb5f62a43a61356f7328d47eff46ef90') in 0.000765 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 92.759998 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.004006 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 11.543977 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.001638 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 35.363233 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.002325 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 27.302187 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.003483 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 58.461734 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.003086 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 4.521861 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.002010 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 25.445370 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.003772 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.002614 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.306017 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.001153 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab
-  artifactKey: Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab using Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'fb5f62a43a61356f7328d47eff46ef90') in 0.002349 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 10.757161 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.001227 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab
-  artifactKey: Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab using Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'fb5f62a43a61356f7328d47eff46ef90') in 0.001541 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.422351 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.001660 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab
-  artifactKey: Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab using Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'fb5f62a43a61356f7328d47eff46ef90') in 0.001109 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 13.282104 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_CrouchableBig.prefab
-  artifactKey: Guid(010c79fa6f5f96548ba6819348b20b32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_CrouchableBig.prefab using Guid(010c79fa6f5f96548ba6819348b20b32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'cfba9e2489454efc01ddeeec7586adac') in 0.001688 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.017374 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.001529 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.000934 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 3.870611 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.001890 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.009031 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab
-  artifactKey: Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab using Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'fb5f62a43a61356f7328d47eff46ef90') in 0.005054 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000138 seconds.
-  path: Assets/Prefab/GrayBoxing/Ruler.prefab
-  artifactKey: Guid(9ff4ba0434a9ab34c8933f59e9fddab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Ruler.prefab using Guid(9ff4ba0434a9ab34c8933f59e9fddab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e191a5da4659e02916aad5edd8590c05') in 0.003103 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 4.817498 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab
-  artifactKey: Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_Crouchable.prefab using Guid(2fe7c438bbd0c9e4bb4f2f3f9ee1878b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e82e804b6d5f0425c18e0bb541a6b055') in 0.003411 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000541 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab
-  artifactKey: Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab using Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'fb5f62a43a61356f7328d47eff46ef90') in 0.001936 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 6.351483 seconds.
-  path: Assets/Prefab/GrayBoxing/HoleJump_CrouchableBig.prefab
-  artifactKey: Guid(010c79fa6f5f96548ba6819348b20b32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/HoleJump_CrouchableBig.prefab using Guid(010c79fa6f5f96548ba6819348b20b32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'cfba9e2489454efc01ddeeec7586adac') in 0.003048 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab
-  artifactKey: Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXLL_Unreachable.prefab using Guid(a4c14c59a375d94449ac0401e2252c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'fb5f62a43a61356f7328d47eff46ef90') in 0.001914 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 32.784823 seconds.
-  path: Assets/Prefab/GrayBoxing/Ruler.prefab
-  artifactKey: Guid(9ff4ba0434a9ab34c8933f59e9fddab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Ruler.prefab using Guid(9ff4ba0434a9ab34c8933f59e9fddab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e191a5da4659e02916aad5edd8590c05') in 0.002904 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  2.766 seconds
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.057 seconds
-Domain Reload Profiling: 5846ms
-	BeginReloadAssembly (875ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (26ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (1ms)
-		CreateAndSetChildDomain (350ms)
-	RebuildCommonClasses (114ms)
-	RebuildNativeTypeToScriptingClass (15ms)
-	initialDomainReloadingComplete (91ms)
-	LoadAllAssembliesAndSetupDomain (1692ms)
-		LoadAssemblies (1935ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (48ms)
-			TypeCache.Refresh (23ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
-			ResolveRequiredComponents (23ms)
-	FinalizeReload (3058ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (788ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (57ms)
-			SetLoadedEditorAssemblies (12ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (137ms)
-			ProcessInitializeOnLoadAttributes (484ms)
-			ProcessInitializeOnLoadMethodAttributes (87ms)
-			AfterProcessingInitializeOnLoad (9ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (31ms)
-Refreshing native plugins compatible for Editor in 9.22 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5433 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 33 unused Assets / (2.2 MB). Loaded Objects now: 6290.
-Memory consumption went from 217.5 MB to 215.3 MB.
-Total: 11.886700 ms (FindLiveObjects: 0.660800 ms CreateObjectMapping: 0.518700 ms MarkObjects: 9.895900 ms  DeleteObjects: 0.807800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 3ead1caaecf1c488f20bcfeb224b6af5 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 33.821351 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.080969 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 7.815305 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.000922 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 5.282171 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.000771 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.607 seconds
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.023 seconds
-Domain Reload Profiling: 2627ms
-	BeginReloadAssembly (190ms)
+- Finished resetting the current domain, in  1.016 seconds
+Domain Reload Profiling: 2322ms
+	BeginReloadAssembly (234ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (7ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (48ms)
-	RebuildCommonClasses (36ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (35ms)
-	LoadAllAssembliesAndSetupDomain (332ms)
-		LoadAssemblies (403ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (62ms)
+	LoadAllAssembliesAndSetupDomain (954ms)
+		LoadAssemblies (730ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (24ms)
-			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (13ms)
-	FinalizeReload (2024ms)
+		AnalyzeDomain (361ms)
+			TypeCache.Refresh (305ms)
+				TypeCache.ScanAssembly (263ms)
+			ScanForSourceGeneratedMonoScriptInfo (37ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (1016ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (598ms)
+		SetupLoadedEditorAssemblies (773ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (32ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (36ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (100ms)
-			ProcessInitializeOnLoadAttributes (375ms)
-			ProcessInitializeOnLoadMethodAttributes (77ms)
-			AfterProcessingInitializeOnLoad (9ms)
+			BeforeProcessingInitializeOnLoad (96ms)
+			ProcessInitializeOnLoadAttributes (534ms)
+			ProcessInitializeOnLoadMethodAttributes (94ms)
+			AfterProcessingInitializeOnLoad (7ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (22ms)
-Refreshing native plugins compatible for Editor in 9.39 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 4.63 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5433 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 33 unused Assets / (2.2 MB). Loaded Objects now: 6306.
-Memory consumption went from 217.6 MB to 215.4 MB.
-Total: 9.339200 ms (FindLiveObjects: 1.117500 ms CreateObjectMapping: 0.606900 ms MarkObjects: 6.773500 ms  DeleteObjects: 0.838500 ms)
+Unloading 5650 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 50 unused Assets / (2.2 MB). Loaded Objects now: 6131.
+Memory consumption went from 258.2 MB to 256.0 MB.
+Total: 6.503800 ms (FindLiveObjects: 0.801500 ms CreateObjectMapping: 0.375800 ms MarkObjects: 3.794200 ms  DeleteObjects: 1.528100 ms)
 
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -1097,87 +186,120 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 16.294220 seconds.
-  path: Assets/Prefab/GrayBoxing/Ruler.prefab
-  artifactKey: Guid(9ff4ba0434a9ab34c8933f59e9fddab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Ruler.prefab using Guid(9ff4ba0434a9ab34c8933f59e9fddab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e191a5da4659e02916aad5edd8590c05') in 0.004192 seconds
+  Time since last request: 208509.251382 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Models/blank_wall_B.fbx
+  artifactKey: Guid(177afface069d0c47af680d3f8a5815e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Models/blank_wall_B.fbx using Guid(177afface069d0c47af680d3f8a5815e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b215668cdf6241cc080fbc3f363682c9') in 0.536142 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 33
 ========================================================================
 Received Import Request.
-  Time since last request: 24.627857 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001870 seconds
+  Time since last request: 0.220135 seconds.
+  path: Assets/Sci-Fi Styled Modular Pack/Models/Sphere_16_extended.fbx
+  artifactKey: Guid(5dba31047b3c3764bb959e4b00c99740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sci-Fi Styled Modular Pack/Models/Sphere_16_extended.fbx using Guid(5dba31047b3c3764bb959e4b00c99740) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ee237d155ea56a4fb61a26810ef6987b') in 0.038249 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 14
 ========================================================================
 Received Import Request.
-  Time since last request: 58.324515 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001541 seconds
+  Time since last request: 2.349423 seconds.
+  path: Assets/Prefab/GrayBoxing/Movin Platforms.prefab
+  artifactKey: Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/GrayBoxing/Movin Platforms.prefab using Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c1e4de804876c8c4226ba82ea0d580ee') in 0.051395 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 21
 ========================================================================
 Received Import Request.
-  Time since last request: 6.410590 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001013 seconds
+  Time since last request: 0.331149 seconds.
+  path: Assets/Prefab/GrayBoxing/Movin Platforms.prefab
+  artifactKey: Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/GrayBoxing/Movin Platforms.prefab using Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b1871371e231dde27719282cf2569ba0') in 0.004172 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 21
 ========================================================================
 Received Import Request.
-  Time since last request: 6.375254 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.000881 seconds
+  Time since last request: 2.002090 seconds.
+  path: Assets/Prefab/GrayBoxing/Movin Platforms.prefab
+  artifactKey: Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/GrayBoxing/Movin Platforms.prefab using Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'bd69a4d7954ac38cce944a373cba783d') in 0.002240 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 21
 ========================================================================
 Received Import Request.
-  Time since last request: 2.546124 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.000744 seconds
+  Time since last request: 5.087979 seconds.
+  path: Assets/Prefab/GrayBoxing/Movin Platforms.prefab
+  artifactKey: Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/GrayBoxing/Movin Platforms.prefab using Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '808405a3ad7c4c973d65bed365d87cb7') in 0.021269 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 27
 ========================================================================
 Received Import Request.
-  Time since last request: 14.454125 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.000794 seconds
+  Time since last request: 15.728857 seconds.
+  path: Assets/Prefab/GrayBoxing/Movin Platforms.prefab
+  artifactKey: Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/GrayBoxing/Movin Platforms.prefab using Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'da267d6d453063748bfe39bc1c948720') in 0.021093 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 28
 ========================================================================
 Received Import Request.
-  Time since last request: 15.746538 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001658 seconds
+  Time since last request: 11.487882 seconds.
+  path: Assets/Prefab/GrayBoxing/Movin Platforms.prefab
+  artifactKey: Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/GrayBoxing/Movin Platforms.prefab using Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b5733649f5d70da85c10d173df4eee6a') in 0.026231 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 29
 ========================================================================
 Received Import Request.
-  Time since last request: 8.446922 seconds.
-  path: Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab
-  artifactKey: Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/GrayBoxing/Wall_HigherXL_Reachable.prefab using Guid(79e5b83816b6e18488023fc7e2fe4ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ed46b65ff18aa58b8fd501fc9e928d2') in 0.001032 seconds
+  Time since last request: 9.302260 seconds.
+  path: Assets/Prefab/GrayBoxing/Movin Platforms.prefab
+  artifactKey: Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/GrayBoxing/Movin Platforms.prefab using Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '62641758e4405ad6a576669cbb5ee718') in 0.029787 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: La operación de E/S se anuló por una salida de subproceso o por una solicitud de aplicación.
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 5.570313 seconds.
+  path: Assets/Prefab/GrayBoxing/Movin Platforms.prefab
+  artifactKey: Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/GrayBoxing/Movin Platforms.prefab using Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9484073da485eeb2e1ee06c98c071521') in 0.021103 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 15.568169 seconds.
+  path: Assets/Prefab/GrayBoxing/Movin Platforms.prefab
+  artifactKey: Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/GrayBoxing/Movin Platforms.prefab using Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '66ff0be378790c3b89791eb9bb7fc204') in 0.020857 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 30
+========================================================================
+Received Import Request.
+  Time since last request: 0.778415 seconds.
+  path: Assets/Prefab/GrayBoxing/Movin Platforms.prefab
+  artifactKey: Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/GrayBoxing/Movin Platforms.prefab using Guid(ca5ae31db77549c4484cdcbb74ab82f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f8fddaed9d038ed8a03f38a046d5e6b4') in 0.019521 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 30

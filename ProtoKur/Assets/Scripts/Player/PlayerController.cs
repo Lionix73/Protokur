@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    #region Variables
     [Header("Basic Movement Variables")]
     [Min(1f)] [SerializeField] private float moveSpeed;
     [Min(1f)] [SerializeField] private float maxSpeed;
@@ -91,6 +92,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection;
     private Rigidbody rb;
 
+    private bool isWalking;
+    private bool isFast;
+
     private Color wallR = Color.red;
     private Color wallL = Color.red;
     private Color wallFront = Color.red;
@@ -104,7 +108,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speedThreshold = 18f;
     private float fovVelocity = 0.0f;
 
+    #endregion
 
+    #region Start and Update
     void Awake(){
         rb = GetComponent<Rigidbody>();
 
@@ -117,8 +123,6 @@ public class PlayerController : MonoBehaviour
         vaultLayer = LayerMask.NameToLayer("vaultLayer");
     }
 
-
-    //Start of the Script
     void Start()
     {
         rb.freezeRotation = true;
@@ -157,6 +161,7 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log("Vel: " + flatVel.magnitude);
     }
+    #endregion
 
     private void ExitingCameraRotation(){
         if(!onWallL && !onWallR)
@@ -193,6 +198,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    #region Inputs
     private void Inputs(){
         horizontalinput = Input.GetAxisRaw("Horizontal");
         verticalinput = Input.GetAxisRaw("Vertical");
@@ -241,8 +247,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(crouch)) {
             Uncrouch();
         }
-    }
 
+        if( horizontalinput != 0 || verticalinput != 0){
+            isWalking = true;
+        }
+        else{
+            isWalking = false;
+        }
+    }
+    #endregion
+
+    #region Basic Movement
     private void MovePlayer(){
         moveDirection = orientation.forward * verticalinput + orientation.right * horizontalinput;
 
@@ -267,10 +282,12 @@ private void SpeedControl(){
 
     if(flatVel.magnitude > speedThreshold){
         speedVFX.Play();
+        isFast = true;
         playerCamera.fieldOfView = Mathf.SmoothDamp(playerCamera.fieldOfView, fastFOV, ref fovVelocity, 0.2f);
     }
     else if(flatVel.magnitude < speedThreshold){
         speedVFX.Stop();
+        isFast = false;
         playerCamera.fieldOfView = Mathf.SmoothDamp(playerCamera.fieldOfView, normalFOV, ref fovVelocity, 0.2f);
     }
 }
@@ -281,7 +298,9 @@ private void SpeedControl(){
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);  
     }
+    #endregion
 
+    #region Crouch and Slide
     private void SlideJump(){
         Debug.Log("SlideJump called");
 
@@ -344,7 +363,9 @@ private void SpeedControl(){
         sliding = false;
         rb.drag = crouchDrag; 
     }
+    #endregion
 
+    #region WallJump and WallRun
     private void WallJump(){
 
         if(onWallL){
@@ -427,7 +448,9 @@ private void SpeedControl(){
 
         }
     }
+    #endregion
 
+    #region vaulting
     private void Vault(){
         RaycastHit hit;
         Vector3 rayOrigin = Camera.main.transform.position + new Vector3(0, -0.2f, 0);
@@ -473,7 +496,9 @@ private void SpeedControl(){
         yield return new WaitForSeconds(cooldownTime);
         canVault = true;
     }
+    #endregion
 
+    #region Grappling
     private void ActiveGrappleGun(){
         if(activeGrapple){
             grapplingGun.SetActive(true);
@@ -482,4 +507,32 @@ private void SpeedControl(){
             grapplingGun.SetActive(false);
         }
     }
+    #endregion
+
+    #region Getters
+    public bool IsWalking{
+        get { return isWalking; }
+    }
+
+    public bool IsGrounded{
+        get { return grounded; }
+    }
+
+    public bool IsWallRunning{
+        get { return activeWallRun; }
+    }
+
+    public bool IsFast{
+        get { return isFast; }
+    }
+
+    public bool IsSliding{
+        get { return sliding; }
+    }
+
+    public bool IsCrouching{
+        get { return crouching; }
+    }
+
+    #endregion
 }
