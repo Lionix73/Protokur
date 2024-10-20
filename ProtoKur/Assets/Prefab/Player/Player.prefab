@@ -174,7 +174,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
     m_Bits: 2048
   playerCapsule: {fileID: 5602484736881529969}
   cameraPos: {fileID: 2761328114964895061}
-  speedVFX: {fileID: 0}
+  speedVFX: {fileID: 3241881930717924444}
   normalFOV: 60
   fastFOV: 75
   speedThreshold: 19
@@ -528,8 +528,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioFeetSource: {fileID: 5667648115493274637}
   audioSpeedSource: {fileID: 7415837815658970289}
+  audioGrapplingSource: {fileID: 0}
   running: {fileID: 8300000, guid: 66f8afd5ee9a6a8478b71e2da29c8fe4, type: 3}
   sliding: {fileID: 8300000, guid: 413a89630ccd730459643a82a62e00be, type: 3}
+  grappling: {fileID: 8300000, guid: 300c47367f8773845bd1fde84526ec8f, type: 3}
   footstepCooldown: 0.2
   crouchstepCooldown: 0.3
   wallRunstepCooldown: 0.15
@@ -5493,7 +5495,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2b30e2371db5c7d41bae00399a877cee, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0

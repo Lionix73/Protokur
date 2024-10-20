@@ -7,10 +7,12 @@ public class AudioPlayerManager : MonoBehaviour
     [Header("Audio Sources")]
     [SerializeField] private AudioSource audioFeetSource;
     [SerializeField] private AudioSource audioSpeedSource;
+    [SerializeField] private AudioSource audioGrapplingSource;
 
     [Header("Audio Clips")]
     [SerializeField] private AudioClip running;
     [SerializeField] private AudioClip sliding;
+    [SerializeField] private AudioClip grappling;
 
     [Header("Audio Cooldowns")]
     [SerializeField] private float footstepCooldown = 0.2f;
@@ -20,12 +22,17 @@ public class AudioPlayerManager : MonoBehaviour
     private bool isSlidingSoundPlaying = false;
     private Coroutine fadeOutCoroutine; 
     private PlayerController playerController;
+    private GrapplingGun grapplingGun;
     private float lastFootstepTime;
+    private bool wasFast = false;
+    private bool hasGrappled = false;
+
     
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
-        lastFootstepTime = -footstepCooldown; // Initialize to allow immediate first step
+        grapplingGun = FindObjectOfType<GrapplingGun>();
+        lastFootstepTime = -footstepCooldown;
     }
     
     void Update()
@@ -35,6 +42,7 @@ public class AudioPlayerManager : MonoBehaviour
         CrouchingVerification(running);
         SlidingVerification(sliding);
         GoingFastVerification();
+        GrapplingVerification();
     }
     
     private void WalkingVerification(AudioClip audio)
@@ -89,32 +97,68 @@ public class AudioPlayerManager : MonoBehaviour
                 {
                     StopCoroutine(fadeOutCoroutine);
                 }
-                fadeOutCoroutine = StartCoroutine(FadeOut(audioFeetSource, 1.0f));
+                fadeOutCoroutine = StartCoroutine(FadeOut(audioFeetSource, 0.3f, 1f, true));
                 isSlidingSoundPlaying = false;
             }
         }
     }
 
-    private void GoingFastVerification(){
-        if (playerController.IsFast){
-            audioSpeedSource.mute = false;
+    private void GoingFastVerification()
+    {
+        if (playerController.IsFast && !wasFast)
+        {
+            wasFast = true;
+            StartCoroutine(FadeIn(audioSpeedSource, 0.5f, 0.6f));
         }
-        else{
-            audioSpeedSource.mute = true;
+        else if (!playerController.IsFast && wasFast)
+        {
+            wasFast = false;
+            StartCoroutine(FadeOut(audioSpeedSource, 0.5f, 0.6f, false));
         }
     }
 
-    private IEnumerator FadeOut(AudioSource audioSource, float fadeDuration)
+    private void GrapplingVerification()
     {
-        float startVolume = audioSource.volume;
+        if (grapplingGun.IsGrappling() && !hasGrappled)
+        {
+            hasGrappled = true;
+            audioGrapplingSource.pitch = Random.Range(0.8f, 1.1f);
+            audioGrapplingSource.PlayOneShot(grappling);
+        }
+        else if (!grapplingGun.IsGrappling() && hasGrappled)
+        {
+            hasGrappled = false;
+        }
+    }
 
+    private IEnumerator FadeOut(AudioSource audioSource, float fadeDuration, float startVolume, bool resetVolume = true)
+    {
         for (float t = 0; t < fadeDuration; t += Time.deltaTime)
         {
             audioSource.volume = Mathf.Lerp(startVolume, 0, t / fadeDuration);
             yield return null;
         }
 
-        audioSource.Stop();
+        if (resetVolume){
+            audioSource.Stop();
+            audioSource.volume = startVolume;
+        }
+        else{
+            audioSource.volume = 0;
+        }
+    }
+
+    private IEnumerator FadeIn(AudioSource audioSource, float fadeDuration, float targetVolume)
+    {
+        float startVolume = 0f;
         audioSource.volume = startVolume;
+    
+        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        {
+            audioSource.volume = Mathf.Lerp(startVolume, 0.6f, t / fadeDuration);
+            yield return null;
+        }
+    
+        audioSource.volume = targetVolume;
     }
 }

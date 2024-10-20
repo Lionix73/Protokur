@@ -159,7 +159,7 @@ public class PlayerController : MonoBehaviour
         //Mostly for Me (usless for the user)
         ActiveGrappleGun();
 
-        Debug.Log("Vel: " + flatVel.magnitude);
+        //Debug.Log("Vel: " + flatVel.magnitude);
     }
     #endregion
 
