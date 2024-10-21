@@ -133,7 +133,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate(){
         MovePlayer();
-        rb.AddForce(Vector3.down * 10f, ForceMode.Force);
+        Vault();
+        rb.AddForce(Vector3.down * 500f * Time.deltaTime, ForceMode.Force);
     }
 
     void Update()
@@ -152,7 +153,7 @@ public class PlayerController : MonoBehaviour
             WallRun();
         }
 
-        Vault();
+        //Vault();
 
         ExitingCameraRotation();
 
@@ -262,13 +263,13 @@ public class PlayerController : MonoBehaviour
         moveDirection = orientation.forward * verticalinput + orientation.right * horizontalinput;
 
         if(grounded){
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * Time.deltaTime * 700f, ForceMode.Force);
         }
         else if(!grounded && !grappling.IsGrappling()){
-            rb.AddForce(moveDirection.normalized * moveSpeed * airMultiplier * 10f, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * airMultiplier * Time.deltaTime * 400f, ForceMode.Force);
         }
         else if(!grounded && grappling.IsGrappling()){
-            rb.AddForce(moveDirection.normalized * moveSpeed * 2f, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * 2f * Time.deltaTime * 100f, ForceMode.Force);
         }
     }
 
@@ -306,7 +307,7 @@ private void SpeedControl(){
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        rb.AddForce(transform.up * jumpForce * 1.5f, ForceMode.Impulse);
+        rb.AddForce(transform.up * jumpForce * 1.6f, ForceMode.Impulse);
 
         rb.AddForce(orientation.forward * jumpForce * 5f, ForceMode.Impulse);  
     }
@@ -369,14 +370,14 @@ private void SpeedControl(){
     private void WallJump(){
 
         if(onWallL){
-            rb.AddForce(orientation.right * jumpForce * 50f * Time.deltaTime, ForceMode.Force);
+            rb.AddForce(orientation.right * jumpForce * 200f * Time.deltaTime, ForceMode.Force);
 
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
             rb.AddForce(transform.up * jumpForce * 1f, ForceMode.Impulse); 
         }
         if(onWallR){
-            rb.AddForce(-orientation.right * jumpForce * 50f * Time.deltaTime, ForceMode.Force);
+            rb.AddForce(-orientation.right * jumpForce * 200f * Time.deltaTime, ForceMode.Force);
 
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
@@ -430,8 +431,8 @@ private void SpeedControl(){
 
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-            rb.AddForce(-orientation.right * wallRunForce * 20f * Time.deltaTime, ForceMode.Force);
-            rb.AddForce(transform.up * wallRunForce * 20f * Time.deltaTime, ForceMode.Acceleration);
+            rb.AddForce(-orientation.right * wallRunForce * 200f * Time.deltaTime, ForceMode.Force);
+            rb.AddForce(transform.up * wallRunForce * 200f * Time.deltaTime, ForceMode.Acceleration);
             
         }
         else if(onWallR){
@@ -441,8 +442,8 @@ private void SpeedControl(){
 
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-            rb.AddForce(orientation.right * wallRunForce * 20f * Time.deltaTime, ForceMode.Force);
-            rb.AddForce(transform.up * wallRunForce * 20f * Time.deltaTime, ForceMode.Acceleration);
+            rb.AddForce(orientation.right * wallRunForce * 200f * Time.deltaTime, ForceMode.Force);
+            rb.AddForce(transform.up * wallRunForce * 200f * Time.deltaTime, ForceMode.Acceleration);
         }
         else if(onWallFront){
 
@@ -454,7 +455,7 @@ private void SpeedControl(){
     private void Vault(){
         RaycastHit hit;
         Vector3 rayOrigin = Camera.main.transform.position + new Vector3(0, -0.2f, 0);
-        Vector3 rayDirection = Camera.main.transform.forward;
+        Vector3 rayDirection = Camera.main.transform.forward * 1.2f;
 
         Debug.DrawRay(rayOrigin, rayDirection * vaultDistance, Color.red);
         if (Physics.Raycast(rayOrigin, rayDirection, out hit, vaultDistance))
@@ -476,10 +477,9 @@ private void SpeedControl(){
         Vector3 vaultPosition = new Vector3(hitPoint.x, hitPoint.y + vaultHeight, hitPoint.z);
 
         // Duration of the vaulting animation
-        float duration = 0.1f; // Adjust as needed
+        float duration = 0.1f;
         float elapsedTime = 0f;
 
-        // Smoothly move the player to the top of the ledge
         while (elapsedTime < duration)
         {
             transform.position = Vector3.Lerp(startPosition, vaultPosition, elapsedTime / duration);
@@ -487,7 +487,6 @@ private void SpeedControl(){
             yield return null;
         }
 
-        // Ensure the player reaches the exact final position
         transform.position = vaultPosition;
 
         vaulting = false;

@@ -1120,6 +1120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intactObject: {fileID: 1086484491673351979}
   brokenObject: {fileID: 8402354196687071336}
+  breakThreshold: 0
 --- !u!82 &5466704499899661476
 AudioSource:
   m_ObjectHideFlags: 0

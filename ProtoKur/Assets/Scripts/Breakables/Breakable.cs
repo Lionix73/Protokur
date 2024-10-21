@@ -7,6 +7,7 @@ public class Breakable : MonoBehaviour
 {
     [SerializeField] private GameObject intactObject;
     [SerializeField] private GameObject brokenObject;
+    [SerializeField] private float breakThreshold;
     private Rigidbody rb;
     private AudioSource audioSource;
 
@@ -21,7 +22,7 @@ public class Breakable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (rb.velocity.magnitude > 3f)
+            if (rb.velocity.magnitude > breakThreshold)
             {
                 GetComponent<Collider>().enabled = false;
 
