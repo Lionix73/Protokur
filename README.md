@@ -31,7 +31,7 @@ I work on *Protokur* periodically in my free time as a way to learn new techniqu
 - **Engine**: Unity 3D
 - **Programming Language**: C#
 - **Assets**: Custom scripts for movement and interaction
-- **Tools**: Unity Particle Systems, Post-processing Stack
+- **Tools**: Unity Particle Systems, ShaderGraphs, Post-processing Stack, Photoshop.
 
 # Devs and Credits
 - [Alejandro López](https://www.linkedin.com/in/alejandro-lopez-ramirez-34479b2a1/) / [@Lionix73](https://x.com/Lionix73/)
