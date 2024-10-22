@@ -14,11 +14,16 @@ public class LevelManager : MonoBehaviour
     private bool isPaused = false;
     private PlayerCam playerCamera;
 
+    [Header("FadeOut")]
+    private Fade fadeScript;
+
     void Start()
     {
         pausePanel.SetActive(false);
 
         playerCamera = FindObjectOfType<PlayerCam>();
+
+        fadeScript = FindObjectOfType<Fade>();
     }
 
     void Update()
@@ -26,6 +31,11 @@ public class LevelManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && canPause)
         {
             TogglePause();
+        }
+
+        if(fadeScript.GetFadeComplete())
+        {
+            SceneManager.LoadScene(nextLevel);
         }
     }
 
@@ -43,7 +53,7 @@ public class LevelManager : MonoBehaviour
     {
         if (other.CompareTag("PlayerCollider"))
         {
-            SceneManager.LoadScene(nextLevel);
+            fadeScript.FadeOut();
         }
     }
 
