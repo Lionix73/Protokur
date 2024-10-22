@@ -57,4 +57,10 @@ public class PlayerCam : MonoBehaviour
         get { return targetZRotation; }
         set { targetZRotation = value; }
     }
+
+    public void SetRotation(float xRot, float yRot)
+    {
+        xRotation = xRot;
+        yRotation = yRot;
+    }
 }

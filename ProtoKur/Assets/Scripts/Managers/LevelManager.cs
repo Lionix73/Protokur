@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
 
         if(fadeScript.GetFadeComplete())
         {
-            SceneManager.LoadScene(nextLevel);
+            SceneManager.LoadSceneAsync(nextLevel, LoadSceneMode.Single);
         }
     }
 

@@ -1,23 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuUI : MonoBehaviour
 {
+    [Header("Panels")]
     [SerializeField] private GameObject creditsPanel;
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject playPanel;
 
+    [Header("Fades")]
+    private Fade fadeScript;
+
+    private int sceneIndex;
 
     void Start(){
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        fadeScript = FindObjectOfType<Fade>();
+
         creditsPanel.SetActive(false);
         playPanel.SetActive(false);
 
         creditsPanel.SetActive(false);
+    }
+
+    void Update(){
+        if (fadeScript.GetFadeComplete())
+        {
+            SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Single);
+        }
     }
 
     public void Play(){
@@ -45,10 +57,18 @@ public class MenuUI : MonoBehaviour
     }
 
     public void Tutorial(){
-        SceneManager.LoadScene("Tutorial");
+        sceneIndex = SceneUtility.GetBuildIndexByScenePath("Assets/Scenes/Tutorial.unity");
+
+        Debug.Log(sceneIndex);
+
+        fadeScript.FadeOut();
     }
 
     public void Gym(){
-        SceneManager.LoadScene("TestingGym");
+        sceneIndex = SceneUtility.GetBuildIndexByScenePath("Assets/Scenes/TestingGym.unity");
+
+        Debug.Log(sceneIndex);
+
+        fadeScript.FadeOut(); 
     }
 }

@@ -398,7 +398,7 @@ MonoBehaviour:
   speedVFX: {fileID: 3241881930717924444}
   normalFOV: 60
   fastFOV: 75
-  speedThreshold: 19
+  speedThreshold: 16
 --- !u!1 &5290643686700775155
 GameObject:
   m_ObjectHideFlags: 0
