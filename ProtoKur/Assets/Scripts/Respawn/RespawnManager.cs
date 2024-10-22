@@ -15,6 +15,9 @@ public class RespawnManager : MonoBehaviour
 
         //playerGO = Instantiate(playerPrefab, respawnPoint.position, respawnPoint.rotation);
         //playerCam = Instantiate(cameraPrefab, respawnPoint.position, respawnPoint.rotation);
+
+        playerGO = playerPrefab;
+        playerCam = cameraPrefab;
     }
 
     public void Respawn(){

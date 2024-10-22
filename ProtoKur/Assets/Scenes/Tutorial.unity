@@ -45114,6 +45114,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 3484339740459877248, guid: bbbf2eb95d29bc64e82e8e5502d91414,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.25048828
+      objectReference: {fileID: 0}
     - target: {fileID: 6082863028086689324, guid: bbbf2eb95d29bc64e82e8e5502d91414,
         type: 3}
       propertyPath: m_Name
