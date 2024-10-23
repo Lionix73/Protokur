@@ -13,6 +13,9 @@ public class Door : MonoBehaviour
     [Tooltip("If true, the door will stay closed on trigger.")]
     [SerializeField] private bool stayClosed = false;
 
+    [Tooltip("If true, the door only will be activable by script.")]
+    [SerializeField] private bool byScript = false;
+
     private bool _doorNearby;
     private bool _stayOpen;
     private bool _stayClosed;
@@ -32,6 +35,41 @@ public class Door : MonoBehaviour
             anim.SetTrigger("Open");
             closed = false;
         }
+
+        if(byScript)
+        {
+            GetComponent<BoxCollider>().enabled = false;
+        }
+    }
+
+    public void Open()
+    {
+        if (closed)
+        {
+            anim.SetTrigger("Open");
+            closed = false;
+
+            if (audioSource != null)
+            {
+                audioSource.pitch = Random.Range(0.8f, 1.1f);
+                audioSource.Play();
+            }
+        }
+    }
+
+    public void Close()
+    {
+        if (!closed)
+        {
+            anim.SetTrigger("Close");
+            closed = true;
+
+            if (audioSource != null)
+            {
+                audioSource.pitch = Random.Range(0.8f, 1.1f);
+                audioSource.Play();
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,6 +83,7 @@ public class Door : MonoBehaviour
 
                 if (audioSource != null)
                 {
+                    audioSource.pitch = Random.Range(0.8f, 1.1f);
                     audioSource.Play();
                 }
             }
@@ -55,6 +94,7 @@ public class Door : MonoBehaviour
 
                 if (audioSource != null)
                 {
+                    audioSource.pitch = Random.Range(0.8f, 1.1f);
                     audioSource.Play();
                 }
             }
@@ -114,6 +154,21 @@ public class Door : MonoBehaviour
                 _stayOpen = false;
             }
             _stayClosed = value;
+        }
+    }
+
+    public bool byScriptDoor
+    {
+        get => byScript;
+        set
+        {
+            if (value)
+            {
+                _doorNearby = false;
+                _stayOpen = false;
+                _stayClosed = false;
+            }
+            byScript = value;
         }
     }
 }

@@ -59,15 +59,17 @@ public class MenuUI : MonoBehaviour
     public void Tutorial(){
         sceneIndex = SceneUtility.GetBuildIndexByScenePath("Assets/Scenes/Tutorial.unity");
 
-        Debug.Log(sceneIndex);
+        fadeScript.FadeOut();
+    }
+
+    public void Lvl1(){
+        sceneIndex = SceneUtility.GetBuildIndexByScenePath("Assets/Scenes/Lvl1.unity");
 
         fadeScript.FadeOut();
     }
 
     public void Gym(){
         sceneIndex = SceneUtility.GetBuildIndexByScenePath("Assets/Scenes/TestingGym.unity");
-
-        Debug.Log(sceneIndex);
 
         fadeScript.FadeOut(); 
     }

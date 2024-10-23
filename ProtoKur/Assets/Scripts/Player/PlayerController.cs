@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Grappling Variables")]
     [SerializeField] private GameObject grapplingGun;
+    [SerializeField] private GameObject grapplingCam;
+
     [SerializeField] private bool activeGrapple;
     private GrapplingGun grappling;
 
@@ -500,9 +502,11 @@ private void SpeedControl(){
     #region Grappling
     private void ActiveGrappleGun(){
         if(activeGrapple){
+            grapplingCam.SetActive(true);
             grapplingGun.SetActive(true);
         }
         else{
+            grapplingCam.SetActive(false);
             grapplingGun.SetActive(false);
         }
     }
@@ -531,6 +535,11 @@ private void SpeedControl(){
 
     public bool IsCrouching{
         get { return crouching; }
+    }
+
+    public bool ActiveGrapple{
+        get { return activeGrapple; }
+        set { activeGrapple = value; }
     }
 
     #endregion

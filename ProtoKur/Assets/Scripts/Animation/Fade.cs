@@ -15,7 +15,7 @@ public class Fade : MonoBehaviour
 
     public void FadeOut()
     {
-        anim.Play("FadeOut");
+        anim.Play("FadeOut");   
     }
 
     private void OnFadeComplete(){

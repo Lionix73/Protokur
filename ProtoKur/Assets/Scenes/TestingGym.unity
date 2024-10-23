@@ -27739,6 +27739,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 954483965}
+  playerPrefab: {fileID: 0}
+  cameraPrefab: {fileID: 0}
 --- !u!114 &739933126 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1203017365418394780, guid: ea3aca57056fcc34181b573203818cef,
@@ -41370,6 +41372,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1240862815765296369, guid: 6833903bd00a4174d8d658c0366d58bd,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 269879
+      objectReference: {fileID: 0}
     - target: {fileID: 3141799256632732180, guid: 6833903bd00a4174d8d658c0366d58bd,
         type: 3}
       propertyPath: orientation
@@ -41380,11 +41387,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 4844941603409254172, guid: 6833903bd00a4174d8d658c0366d58bd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4941098770306944697, guid: 6833903bd00a4174d8d658c0366d58bd,
         type: 3}
       propertyPath: cameraPosition
       value: 
       objectReference: {fileID: 2793352023326765836}
+    - target: {fileID: 5459672926782676083, guid: 6833903bd00a4174d8d658c0366d58bd,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 7902198457243866122}
+    - target: {fileID: 5459672926782676083, guid: 6833903bd00a4174d8d658c0366d58bd,
+        type: 3}
+      propertyPath: crosshairUI
+      value: 
+      objectReference: {fileID: 1139235892}
+    - target: {fileID: 5723768816260442696, guid: 6833903bd00a4174d8d658c0366d58bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6436219122481394196, guid: 6833903bd00a4174d8d658c0366d58bd,
         type: 3}
       propertyPath: player
