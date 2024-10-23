@@ -423,8 +423,7 @@ MonoBehaviour:
   doorNearby: 1
   stayOpen: 0
   stayClosed: 0
-  openAlways: 0
-  closeAlways: 0
+  byScript: 0
 --- !u!82 &2160780893164506648
 AudioSource:
   m_ObjectHideFlags: 0
@@ -437,7 +436,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6f2e883bd0bbc8441b1c203d632a9ac2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
